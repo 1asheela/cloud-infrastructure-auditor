@@ -15,9 +15,57 @@ This project helps scan cloud resources and optimize AWS costs.
 - Typer CLI
 
  ##Project Goal
+
 To identify unused AWS resources and suggest cost-saving recommendations.
-##installation
+
+## installation
+
 pip install-r requirement.txt
-##Run the project
+
+## Run the project
+
 pyton main.py
+# Features
+
+- Scan AWS EC2 resources
+- Generate JSON reports
+- Command Line Interface (CLI) support
+- Modular project structure
+- Basic testing support
+- Easy setup and execution
+
+# Project Structure
+
+project/
+│
+├── scanner/
+│   └── ec2_scanner.py
+│
+├── reports/
+│   └── json_report.py
+│
+├── tests/
+│   ├── test_scanner.py
+│   ├── test_reports.py
+│   └── test_cli.py
+│
+├── utils/
+│   └── logger.py
+│
+├── README.md
+├── requirements.txt
+└── main.py
+
+# Example Output
+
+Scanning AWS EC2 resources...
+
+[
+    {
+        "InstanceId": "i-123456",
+        "State": "running"
+    }
+]
+
+JSON report generated successfully.
 
