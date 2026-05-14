@@ -24,7 +24,7 @@ pip install-r requirement.txt
 
 ## Run the project
 
-pyton main.py
+py main.py
 # Features
 
 - Scan AWS EC2 resources
