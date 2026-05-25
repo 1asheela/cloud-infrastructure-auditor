@@ -21,4 +21,4 @@ def list_s3_buckets():
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    list_s3_buckets()
+    list_s3_buckets()s
