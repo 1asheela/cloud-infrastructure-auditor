@@ -1,24 +1,15 @@
+from moto import mock_aws
 import boto3
-from botocore.exceptions import NoCredentialsError, PartialCredentialsError
+from s3 import list_s3_buckets
 
-def list_s3_buckets():
-    try:
-        # Create S3 client
-        s3 = boto3.client('s3')
+@mock_aws
+def test_list_s3_buckets():
+    s3 = boto3.client("s3", region_name="us-east-1")
+    
+    s3.create_bucket(Bucket="test-bucket-1")
+    s3.create_bucket(Bucket="test-bucket-2")
 
-        # Get bucket list
-        response = s3.list_buckets()
+    result = list_s3_buckets()
 
-        print("S3 Buckets:")
-        for bucket in response['Buckets']:
-            print(f" - {bucket['Name']}")
-
-    except NoCredentialsError:
-        print("Error: AWS credentials not found.")
-    except PartialCredentialsError:
-        print("Error: Incomplete AWS credentials.")
-    except Exception as e:
-        print(f"Error: {e}")
-
-if __name__ == "__main__":
-    list_s3_buckets()s
+    assert "test-bucket-1" in result
+    assert "test-bucket-2" in result
