@@ -1,4 +1,14 @@
+# Python
 __pycache__/
 *.pyc
+.pytest_cache/
+
+# Packaging
+dist/
+build/
+*.egg-info/
+
+# PyInstaller
+*.spec
 .env
-venv/
+echo .env >>  .gitignore
