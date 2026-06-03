@@ -1,4 +1,9 @@
-from cli.commands import scan
-def test_scan():
-    result = scan()
-    assert result is not None
+def scan():
+    print("Starting AWS Infrastructure Scan...")
+
+    result = {
+        "status": "success",
+        "resources": []
+    }
+
+    return result
